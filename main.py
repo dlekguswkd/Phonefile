@@ -6,15 +6,36 @@ print("*******************************************")
 print("*         전화번호 관리 프로그램          *")
 print("*******************************************")
 
-print("1.리스트   2.등록   3.삭제   4.검색   5.종료")
-print("--------------------------------------------")
 
-no = int(input(">메뉴번호: "))
+while True:
+    print("")
+    print("1.리스트   2.등록   3.삭제   4.검색   5.종료")
+    print("--------------------------------------------")
 
-if no == 1:
+    no = int(input(">메뉴번호: "))
     file_path = "C:\\javaStudy\\workspace-python\\Phonefile\\PhoneDB.txt"
-    phone_dao.read_phonefile(file_path)
-    
 
+    if no == 1:
+        print("<1.리스트>")
+        phone_dao.read_phonefile(file_path)
+        
+
+    elif no == 2:
+        print("<2.등록>")
+        phone_dao.add_phonefile(file_path)
+
+    elif no == 3:
+        print("<3.삭제>")
+
+    elif no == 4:
+        print("<4.검색>")    
+
+    elif no == 5:
+        print("*******************************************")
+        print("*               감사합니다                *")
+        print("*******************************************")
+        break
+    else:
+        print("[다시 입력해 주세요.]")
 
 
