@@ -26,6 +26,7 @@ while True:
 
     elif no == 3:
         print("<3.삭제>")
+        phone_dao.delete_phonefile(file_path)
 
     elif no == 4:
         print("<4.검색>")    
