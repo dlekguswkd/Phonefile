@@ -58,3 +58,24 @@ def delete_phonefile(file_path):
         person_list.writelines(lines)
 
     print("[삭제되었습니다.]")
+
+
+# 검색
+def search_phonefile(file_path):
+    search_value = input(">이름: ")
+
+    # 전화번호부를 읽어들여서 데이터를 리스트로 저장
+    with open(file_path, "r", encoding="utf-8") as person_list:
+        lines = person_list.readlines()  # 각 줄을 리스트로 읽어오기
+
+    found = False  # 검색 결과가 있는지 체크하는 변수
+
+    for index, person_vo in enumerate(lines, start=1):
+        person = person_vo.strip().split(",")
+        # 이름이나 휴대전화 번호가 검색어에 포함되어 있으면 출력
+        if search_value in person[0] or search_value in person[1]:
+            print(f"{index}     {person[0]}\t{person[1]}\t{person[2]}")  # 인덱스와 함께 출력
+            found = True
+
+    if not found:
+        print("[검색된 결과가 없습니다.]")

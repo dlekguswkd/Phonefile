@@ -30,6 +30,7 @@ while True:
 
     elif no == 4:
         print("<4.검색>")    
+        phone_dao.search_phonefile(file_path) 
 
     elif no == 5:
         print("*******************************************")
